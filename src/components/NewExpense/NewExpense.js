@@ -8,7 +8,7 @@ export default function NewExpense(props) {
       ...handlerInput,
       id: Math.random().toString(),
     }
-    // console.log(dataHanlderInput);
+    console.log(dataHanlderInput, 'new expense');
     props.onGetDataExpenses(dataHanlderInput)
   }
 

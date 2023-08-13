@@ -2,18 +2,14 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 export default function ExpenseForm(props) {
-  const [title, setTitle] = useState("title");
+  const [title,setTitle ] = useState("title");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
   //   const {incre, setIncre} = useState(1);
 
   const titleChange = (event) => {
-    // setInputState((prev) => {
-
-    // })
     setTitle(event.target.value);
-
-    console.log(event.target.value.length);
+    console.log(event.target.value);
   };
   const numberChange = (event) => {
     setAmount(event.target.value);
@@ -53,7 +49,7 @@ export default function ExpenseForm(props) {
       amount: amount,
       date: new Date(date),
     };
-    // console.log(body);
+    console.log(body);
     props.saveDataHandler(body);
     setTitle("");
     setAmount("");
@@ -69,14 +65,6 @@ export default function ExpenseForm(props) {
             <label>title</label>
             {/* <input type="text" onChange={(event) => staticChangeIndifier('title', event)} /> */}
             <input type="text" value={title} onChange={titleChange} />
-            <br />
-            {title.length > 5 ? (
-              <small style={{ color: "red" }}>
-                Error Jangan lebih dari 5 character
-              </small>
-            ) : (
-              ""
-            )}
           </div>
           <div className="new-expense__control">
             <label>amount</label>
