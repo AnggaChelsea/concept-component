@@ -30,6 +30,7 @@ function App(){
   const dataNewExpenses = (eventData) => {
     console.log(eventData)
     setExpenses(prevExpend => {
+      console.log(prevExpend)
       return [eventData, ...prevExpend]
     })
   }

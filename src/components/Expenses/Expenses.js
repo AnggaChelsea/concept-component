@@ -9,16 +9,17 @@ export default function Expenses(props) {
 
 
   const filterChange = filterDataChange => {
-    console.log('expenses.js')
-    console.log(filterDataChange)
     setFilteredYear(filterDataChange)
   }
+  const filterExpense = props.item.filter(exp => {
+    return exp.date.getFullYear().toString() === filteredYear
+  })
   return (
     <div>
     <Card className='expenses'>
-    <ExpendFilter selected={filteredYear} onChangeFilter={filterChange} />
+    <ExpendFilter className="filter" selected={filteredYear} onChangeFilter={filterChange} />
     {
-      props.item.map((expense) => <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} />)
+      filterExpense.map((expense) => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)
     }
     </Card>
     </div>

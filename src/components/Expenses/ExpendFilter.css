@@ -1,0 +1,18 @@
+.expense-filter__control{
+    display:flex; justify-content:space-between;
+    color:white;
+
+}
+select{
+    width:80px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+select::after{
+    border: none;
+}
+select:focus{
+    border: none;
+}
